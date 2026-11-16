@@ -1,0 +1,364 @@
+/* ===== Basic settings for the whole page ===== */
+* {
+  box-sizing: border-box;   /* padding and border stay inside the width */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: #121212;   /* dark background */
+  color: #e8e8e8;              /* light text */
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  color: #ff3b3b;              /* red headings */
+}
+
+a {
+  color: #ff6b6b;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* keeps the content in the middle and not too wide */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ===== Navigation bar ===== */
+.navbar {
+  background-color: #000000;
+  border-bottom: 3px solid #c1121f;
+  padding: 12px 0;
+  position: sticky;          /* menu stays at the top while scrolling */
+  top: 0;
+}
+
+.navbar .container {
+  display: flex;                    /* puts logo and menu in one row */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff3b3b;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;     /* removes the bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  margin-left: 18px;
+}
+
+.navbar li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 2px;
+}
+
+.navbar li a:hover {
+  color: #ff3b3b;
+}
+
+/* ===== Home page top part ===== */
+.hero {
+  background-color: #1c0b0c;
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 1px solid #333333;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin: 0 0 15px 0;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== Title box at the top of inner pages ===== */
+.page-title {
+  background-color: #1c0b0c;
+  padding: 40px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.page-title h1 {
+  margin: 0 0 5px 0;
+  font-size: 36px;
+}
+
+.page-title p {
+  margin: 0;
+  color: #bbbbbb;
+}
+
+/* ===== Pages: every page is hidden, the one in the link (#about etc.) is shown ===== */
+.page {
+  display: none;
+  scroll-margin-top: 90px;   /* keeps the page below the sticky menu */
+}
+
+.page:target {
+  display: block;            /* :target = the section whose id is in the address bar */
+}
+
+/* home is shown by default (when no page is chosen) */
+#home {
+  display: block;
+}
+
+/* but if any other page is chosen, hide home (home is written last in the HTML) */
+.page:target ~ #home {
+  display: none;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 45px 0;
+}
+
+.dark-box {
+  background-color: #1a1a1a;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  background-color: #c1121f;
+  color: #ffffff;
+  padding: 12px 26px;
+  border: 2px solid #c1121f;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #e01e2b;
+  border-color: #e01e2b;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 31%;
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-top: 4px solid #c1121f;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* two cards in a row (written after .card so it wins) */
+.half {
+  width: 48%;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+/* ===== Small message box ===== */
+.note {
+  background-color: #1e1e1e;
+  border-left: 5px solid #c1121f;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+}
+
+/* ===== Forms ===== */
+.form-box {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  padding: 25px;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+input:hover, select:hover, textarea:hover {
+  border-color: #c1121f;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff3b3b;
+}
+
+.form-box .btn {
+  margin-top: 25px;
+}
+
+/* ===== Tables ===== */
+.table-box {
+  overflow-x: auto;      /* adds a scroll bar on small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+}
+
+th {
+  background-color: #c1121f;
+  color: #ffffff;
+  text-align: left;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #333333;
+}
+
+tr:nth-child(even) {
+  background-color: #181818;   /* every second row is a bit darker */
+}
+
+tr:hover td {
+  background-color: #2b1214;
+}
+
+/* ===== Blood availability boxes ===== */
+.stock-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stock {
+  width: 23%;
+  margin: 1%;
+  padding: 15px;
+  text-align: center;
+  background-color: #1e1e1e;
+  border: 2px solid #333333;
+  border-radius: 6px;
+}
+
+.stock h3 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.stock p {
+  margin: 5px 0 0 0;
+}
+
+.status {
+  font-weight: bold;
+}
+
+/* green = enough, orange = low, red = finished */
+.ok {
+  border-color: #2e9e5b;
+}
+.ok .status {
+  color: #3ecf7b;
+}
+
+.low {
+  border-color: #e0a030;
+}
+.low .status {
+  color: #f0b848;
+}
+
+.out {
+  border-color: #ff3b3b;
+}
+.out .status {
+  color: #ff3b3b;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #000000;
+  border-top: 3px solid #c1121f;
+  text-align: center;
+  padding: 20px;
+  color: #aaaaaa;
+  font-size: 15px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* ===== Small screens (phones) ===== */
+@media (max-width: 700px) {
+  .card, .half {
+    width: 100%;
+  }
+
+  .stock {
+    width: 48%;
+  }
+
+  .navbar li {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}

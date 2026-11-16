@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeLink Blood Donation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- navigation bar -->
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="#home">LifeLink Blood Donation</a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#request">Request</a></li>
+          <li><a href="#availability">Availability</a></li>
+          <li><a href="#donors">Donors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <div class="page" id="about">
+    <div class="page-title">
+      <div class="container">
+        <h1>About the system</h1>
+        <p>What LifeLink is and why blood groups matter</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <h2>What is LifeLink?</h2>
+        <p>LifeLink is a Blood Donation Management System. Donors create a profile with their blood group and city. People who need blood send a request with the hospital name, the units needed and how urgent it is.</p>
+        <p>A complete version would keep this information in a database and match donors with requests automatically. This project is only the front end, made with HTML and CSS for the CSE326 course.</p>
+
+        <h2>Why donate blood?</h2>
+        <ul>
+          <li>Blood is needed for surgeries, accidents and childbirth.</li>
+          <li>Patients with diseases like thalassemia need blood again and again.</li>
+          <li>Blood cannot be made in a factory, it only comes from donors.</li>
+          <li>Blood does not stay fresh forever, so new donors are always needed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section dark-box">
+      <div class="container">
+        <h2>Which blood group can give to which?</h2>
+        <p>This table is a general guide for red blood cells.</p>
+        <div class="table-box">
+          <table>
+            <tr>
+              <th>Blood group</th>
+              <th>Can donate to</th>
+              <th>Can receive from</th>
+            </tr>
+            <tr><td>A+</td><td>A+, AB+</td><td>A+, A-, O+, O-</td></tr>
+            <tr><td>A-</td><td>A+, A-, AB+, AB-</td><td>A-, O-</td></tr>
+            <tr><td>B+</td><td>B+, AB+</td><td>B+, B-, O+, O-</td></tr>
+            <tr><td>B-</td><td>B+, B-, AB+, AB-</td><td>B-, O-</td></tr>
+            <tr><td>AB+</td><td>AB+</td><td>All groups</td></tr>
+            <tr><td>AB-</td><td>AB+, AB-</td><td>A-, B-, AB-, O-</td></tr>
+            <tr><td>O+</td><td>O+, A+, B+, AB+</td><td>O+, O-</td></tr>
+            <tr><td>O-</td><td>All groups</td><td>O-</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <div class="page" id="how">
+    <div class="page-title">
+      <div class="container">
+        <h1>How it works</h1>
+        <p>Simple steps for donors and for people who need blood</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="cards">
+          <div class="card half">
+            <h3>If you want to donate</h3>
+            <ol>
+              <li>Fill in the <a href="#donate">donor registration form</a>.</li>
+              <li>Enter your blood group, city and last donation date.</li>
+              <li>We contact you when a request matches your blood group.</li>
+              <li>Go to the hospital, donate, and rest as the doctor says.</li>
+            </ol>
+          </div>
+          <div class="card half">
+            <h3>If you need blood</h3>
+            <ol>
+              <li>Fill in the <a href="#request">blood request form</a>.</li>
+              <li>Enter the hospital, city, units needed and urgency.</li>
+              <li>Check <a href="#availability">availability</a> and the <a href="#donors">donor list</a>.</li>
+              <li>Contact a matching donor or the hospital blood bank.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DONATE ========== -->
+  <div class="page" id="donate">
+    <div class="page-title">
+      <div class="container">
+        <h1>Donor registration</h1>
+        <p>Fill in this form to become a blood donor</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <p class="note">Demo form: your details are not saved anywhere.</p>
+
+        <form class="form-box" action="#thanks" method="get">
+          <label for="d-name">Full name</label>
+          <input type="text" id="d-name" required>
+
+          <label for="d-age">Age (18 to 65)</label>
+          <input type="number" id="d-age" min="18" max="65" required>
+
+          <label for="d-group">Blood group</label>
+          <select id="d-group" required>
+            <option value="">Select blood group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+
+          <label for="d-phone">Phone number</label>
+          <input type="tel" id="d-phone" required>
+
+          <label for="d-email">Email address</label>
+          <input type="email" id="d-email" required>
+
+          <label for="d-city">City</label>
+          <input type="text" id="d-city" required>
+
+          <label for="d-last">Last donation date (if any)</label>
+          <input type="date" id="d-last">
+
+          <button type="submit" class="btn">Register as donor</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== REQUEST ========== -->
+  <div class="page" id="request">
+    <div class="page-title">
+      <div class="container">
+        <h1>Request blood</h1>
+        <p>Tell us which blood group is needed and where</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <p class="note">Demo form: your details are not saved anywhere. In a real emergency, call the hospital or your local emergency number.</p>
+
+        <form class="form-box" action="#thanks" method="get">
+          <label for="r-patient">Patient name</label>
+          <input type="text" id="r-patient" required>
+
+          <label for="r-group">Blood group needed</label>
+          <select id="r-group" required>
+            <option value="">Select blood group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+
+          <label for="r-units">Units required</label>
+          <input type="number" id="r-units" min="1" max="10" required>
+
+          <label for="r-hospital">Hospital name</label>
+          <input type="text" id="r-hospital" required>
+
+          <label for="r-city">City</label>
+          <input type="text" id="r-city" required>
+
+          <label for="r-contact">Contact number</label>
+          <input type="tel" id="r-contact" required>
+
+          <label for="r-urgency">Urgency</label>
+          <select id="r-urgency" required>
+            <option value="">Select urgency</option>
+            <option>Critical - needed within hours</option>
+            <option>Urgent - needed within 24 hours</option>
+            <option>Planned - needed within a few days</option>
+          </select>
+
+          <button type="submit" class="btn">Send request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== AVAILABILITY ========== -->
+  <div class="page" id="availability">
+    <div class="page-title">
+      <div class="container">
+        <h1>Blood availability</h1>
+        <p>Units of each blood group in the blood bank</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <p class="note">Demo data: these numbers are made up and are not real stock levels.</p>
+        <div class="stock-row">
+          <div class="stock ok">
+            <h3>A+</h3>
+            <p>24 units</p>
+            <p class="status">Available</p>
+          </div>
+          <div class="stock low">
+            <h3>A-</h3>
+            <p>6 units</p>
+            <p class="status">Low</p>
+          </div>
+          <div class="stock ok">
+            <h3>B+</h3>
+            <p>31 units</p>
+            <p class="status">Available</p>
+          </div>
+          <div class="stock low">
+            <h3>B-</h3>
+            <p>4 units</p>
+            <p class="status">Low</p>
+          </div>
+          <div class="stock ok">
+            <h3>AB+</h3>
+            <p>12 units</p>
+            <p class="status">Available</p>
+          </div>
+          <div class="stock out">
+            <h3>AB-</h3>
+            <p>0 units</p>
+            <p class="status">Not available</p>
+          </div>
+          <div class="stock ok">
+            <h3>O+</h3>
+            <p>40 units</p>
+            <p class="status">Available</p>
+          </div>
+          <div class="stock low">
+            <h3>O-</h3>
+            <p>3 units</p>
+            <p class="status">Low</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DONORS ========== -->
+  <div class="page" id="donors">
+    <div class="page-title">
+      <div class="container">
+        <h1>Donor list</h1>
+        <p>People who have registered as blood donors</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <p class="note">These names are made up for the demo. They are not real people.</p>
+        <div class="table-box">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Blood group</th>
+              <th>City</th>
+              <th>Last donation</th>
+              <th>Status</th>
+            </tr>
+            <tr><td>Rahul Sharma</td><td>O+</td><td>Jalandhar</td><td>Jan 2026</td><td>Ready to donate</td></tr>
+            <tr><td>Simran Kaur</td><td>A+</td><td>Ludhiana</td><td>Mar 2026</td><td>Ready to donate</td></tr>
+            <tr><td>Aman Verma</td><td>B-</td><td>Amritsar</td><td>Aug 2026</td><td>Resting</td></tr>
+            <tr><td>Priya Singh</td><td>AB+</td><td>Chandigarh</td><td>Feb 2026</td><td>Ready to donate</td></tr>
+            <tr><td>Karan Mehta</td><td>O-</td><td>Jalandhar</td><td>Never donated</td><td>Ready to donate</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div class="page" id="contact">
+    <div class="page-title">
+      <div class="container">
+        <h1>Contact us</h1>
+        <p>Questions about this project? Send us an email or a message</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <h2>Email</h2>
+        <p>You can write to us at <a href="mailto:bdl123@gmail.com">bdl123@gmail.com</a></p>
+
+        <h2>Send a message</h2>
+        <form class="form-box" action="#thanks" method="get">
+          <label for="c-name">Your name</label>
+          <input type="text" id="c-name" required>
+
+          <label for="c-email">Your email</label>
+          <input type="email" id="c-email" required>
+
+          <label for="c-message">Message</label>
+          <textarea id="c-message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== THANK YOU (shown after a form is submitted) ========== -->
+  <div class="page" id="thanks">
+    <div class="section">
+      <div class="container center">
+        <h1>Thank you!</h1>
+        <p>Your form was filled in correctly. This is a demo website, so nothing has been saved or sent.</p>
+        <a class="btn" href="#home">Back to home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HOME ========== -->
+  <div class="page" id="home">
+    <div class="hero">
+      <div class="container">
+        <h1>Give blood. Save a life.</h1>
+        <p>LifeLink connects people who want to donate blood with patients and families who need it urgently.</p>
+        <a class="btn" href="#donate">Become a donor</a>
+        <a class="btn btn-outline" href="#request">Request blood</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <h2>What do you want to do?</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Donate blood</h3>
+            <p>Register with your blood group and city so we can contact you when someone nearby needs your type.</p>
+            <a href="#donate">Go to donor registration</a>
+          </div>
+          <div class="card">
+            <h3>Request blood</h3>
+            <p>Fill in the patient, hospital and number of units needed, and mark how urgent the request is.</p>
+            <a href="#request">Go to request form</a>
+          </div>
+          <div class="card">
+            <h3>Check availability</h3>
+            <p>See which blood groups are available, low or finished in the blood bank.</p>
+            <a href="#availability">Go to availability</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section dark-box">
+      <div class="container">
+        <h2>Why this project?</h2>
+        <p>Finding the right blood group quickly is hard when every minute counts. This website shows how a blood donation system can bring donors and patients together on one platform.</p>
+        <p>Read more on the <a href="#about">About page</a> or see the steps on <a href="#how">How it works</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <p>LifeLink Blood Donation - CSE326 Internet Programming project, Lovely Professional University</p>
+    <p>Email: <a href="mailto:bdl123@gmail.com">bdl123@gmail.com</a></p>
+    <p>This is a student demo. All donors and stock numbers are sample data.</p>
+  </div>
+
+</body>
+</html>
